@@ -1,3 +1,4 @@
+import axios from '../node_modules/axios/index'
 import { DeviceState } from './../types/device-state'
 
 /**
@@ -5,10 +6,14 @@ import { DeviceState } from './../types/device-state'
  * @returns The device state
  */
 export const getDeviceState = async (): Promise<DeviceState> => {
-  // TODO: Implement this function
-  return {
-    lightStatus: false,
-    ldr: Math.round(Math.random() * 100),
-    motion: Math.round(Math.random() * 100),
-  }
+  const {
+    data: { data },
+  } = await axios.get<{
+    data: DeviceState
+  }>('https://api.netpie.io/v2/device/shadow/data', {
+    headers: {
+      Authorization: `Device ${process.env.NEXT_PUBLIC_deviceId}`,
+    },
+  })
+  return data
 }
