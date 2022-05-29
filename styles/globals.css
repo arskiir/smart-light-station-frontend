@@ -11,7 +11,12 @@
       url('/font/depixel/DePixelKlein.otf') format('opentype');
   }
 
+  @font-face {
+    font-family: 'ht';
+    src: url('/font/heavy_trip/HeavyTrip.ttf') format('truetype');
+  }
+
   html {
-    font-family: 'depixel', sans-serif;
+    font-family: 'ht', sans-serif;
   }
 }
