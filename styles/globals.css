@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'depixel';
+    src: url('/font/depixel/depixelklein.woff2') format('woff2'),
+      url('/font/depixel/depixelklein.woff') format('woff'),
+      url('/font/depixel/DePixelKlein.ttf') format('truetype'),
+      url('/font/depixel/DePixelKlein.otf') format('opentype');
+  }
+
+  html {
+    font-family: 'depixel', sans-serif;
+  }
+}
