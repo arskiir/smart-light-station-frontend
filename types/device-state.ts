@@ -1,5 +1,5 @@
 export interface DeviceState {
-  lightStatus: boolean
-  ldr: 0 | 1
-  motion: 0 | 1
+  LightStatus: 0 | 1
+  LDR: number
+  Motion: 0 | 1
 }

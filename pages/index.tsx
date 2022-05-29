@@ -4,13 +4,13 @@ import MotionPaper from '../components/paper/Motion'
 import { useDeviceState } from '../hooks/useDeviceState'
 
 export default function Home() {
-  const { ldr, lightStatus, motion } = useDeviceState()
+  const { LDR, Motion, LightStatus } = useDeviceState()
 
   return (
     <div className="space-x-10">
-      <LDRPaper value={ldr}></LDRPaper>
-      <LightStatusPaper value={lightStatus}></LightStatusPaper>
-      <MotionPaper value={motion}></MotionPaper>
+      <LDRPaper value={LDR}></LDRPaper>
+      <LightStatusPaper value={LightStatus}></LightStatusPaper>
+      <MotionPaper value={Motion}></MotionPaper>
     </div>
   )
 }
