@@ -7,7 +7,7 @@ import { getStatusText } from '../utils/getStatusText'
 export default function Home() {
   const updateInterval = 1500
 
-  const state = useDeviceState({ debug: true, updateInterval })
+  const state = useDeviceState({ updateInterval })
   const [bgOpacity, setBgOpacity] = useState(getBgOpacity(state.LDR))
   const [statusText, setStatusText] = useState(getStatusText(state))
 
@@ -34,7 +34,7 @@ export default function Home() {
         className="bg-black w-full h-full absolute transition-opacity"
         style={{
           opacity: bgOpacity,
-          'transition-duration': `${updateInterval * 0.5}ms`,
+          translationDuration: `${updateInterval * 0.5}ms`,
         }}
       ></div>
 
