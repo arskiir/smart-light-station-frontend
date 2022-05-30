@@ -9,7 +9,7 @@ const LightStatusPaper: FC<{ value?: DeviceState['LightStatus'] }> = ({
     <Paper
       img="/paper_light_status.png"
       title="LIGHT"
-      value={value && value === 1 ? 'ON' : 'OFF'}
+      value={value ? (value === 1 ? 'ON' : 'OFF') : ''}
     ></Paper>
   )
 }
