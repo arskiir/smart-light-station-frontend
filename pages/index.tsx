@@ -4,7 +4,7 @@ import { useDeviceState } from '../hooks/useDeviceState'
 import { getBgOpacity } from '../utils/getBgOpacity'
 
 export default function Home() {
-  const state = useDeviceState()
+  const state = useDeviceState({ debug: true })
   const [bgOpacity, setBgOpacity] = useState(1)
 
   useEffect(() => {
