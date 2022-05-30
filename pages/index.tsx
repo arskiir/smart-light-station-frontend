@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react'
 import PaperSet from '../components/PaperSet'
 import { useDeviceState } from '../hooks/useDeviceState'
 import { getBgOpacity } from '../utils/getBgOpacity'
+import { getStatusText } from '../utils/getStatusText'
 
 export default function Home() {
   const state = useDeviceState({ debug: true })
   const [bgOpacity, setBgOpacity] = useState(getBgOpacity(state.LDR))
+  const [statusText, setStatusText] = useState(getStatusText(state))
 
   useEffect(() => {
     setBgOpacity(getBgOpacity(state.LDR))
+    setStatusText(getStatusText(state))
   }, [state])
 
   return (
@@ -18,7 +21,7 @@ export default function Home() {
           bgOpacity > 0.5 ? 'text-white' : 'text-black'
         }`}
       >
-        There is no one here
+        {statusText}
       </span>
       <div
         className="bg-black w-full h-full absolute"
