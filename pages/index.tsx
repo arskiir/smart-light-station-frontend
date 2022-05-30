@@ -13,12 +13,20 @@ export default function Home() {
 
   return (
     <main className="w-screen min-h-screen overflow-hidden">
+      <span
+        className={`font-depixel text-5xl absolute z-10 top-[37%] left-1/2 -translate-x-1/2 ${
+          bgOpacity > 0.5 ? 'text-white' : 'text-black'
+        }`}
+      >
+        There is no one here
+      </span>
       <div
         className="bg-black w-full h-full absolute"
         style={{
           opacity: bgOpacity,
         }}
       ></div>
+
       <PaperSet
         state={state}
         className="absolute top-1/2 -translate-y-1/5 left-1/2 -translate-x-1/2"
