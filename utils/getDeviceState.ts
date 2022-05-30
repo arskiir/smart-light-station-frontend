@@ -15,5 +15,11 @@ export const getDeviceState = async (): Promise<DeviceState> => {
       Authorization: `Device ${process.env.NEXT_PUBLIC_deviceId}`,
     },
   })
+  // console.log(data)
   return data
+  // return {
+  //   LDR: Math.round(Math.random() * 100),
+  //   LightStatus: 1,
+  //   Motion: 1,
+  // }
 }

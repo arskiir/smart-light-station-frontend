@@ -11,6 +11,7 @@ export const useDeviceState = (updatePeriod: number = 1500) => {
   useEffect(() => {
     const interval = setInterval(async () => {
       getDeviceState().then(setState)
+      
     }, updatePeriod)
 
     return () => clearInterval(interval)
