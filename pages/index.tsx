@@ -5,7 +5,9 @@ import { getBgOpacity } from '../utils/getBgOpacity'
 import { getStatusText } from '../utils/getStatusText'
 
 export default function Home() {
-  const state = useDeviceState({ debug: true })
+  const updateInterval = 1500
+
+  const state = useDeviceState({ debug: true, updateInterval })
   const [bgOpacity, setBgOpacity] = useState(getBgOpacity(state.LDR))
   const [statusText, setStatusText] = useState(getStatusText(state))
 
@@ -17,7 +19,7 @@ export default function Home() {
   return (
     <main className="w-screen min-h-screen overflow-hidden">
       <span
-        className={`font-depixel text-5xl absolute z-10 top-[37%] left-1/2 -translate-x-1/2 ${
+        className={`font-depixel text-5xl absolute z-10 top-[37%] left-1/2 -translate-x-1/2 transition-colors ${
           bgOpacity > 0.5 ? 'text-white' : 'text-black'
         }`}
       >
@@ -25,9 +27,10 @@ export default function Home() {
       </span>
 
       <div
-        className="bg-black w-full h-full absolute"
+        className="bg-black w-full h-full absolute transition-opacity"
         style={{
           opacity: bgOpacity,
+          'transition-duration': `${updateInterval * 0.5}ms`,
         }}
       ></div>
 
