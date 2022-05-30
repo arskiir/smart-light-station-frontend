@@ -23,6 +23,7 @@ export default function Home() {
       >
         {statusText}
       </span>
+
       <div
         className="bg-black w-full h-full absolute"
         style={{
@@ -34,6 +35,7 @@ export default function Home() {
         state={state}
         className="absolute top-1/2 -translate-y-1/5 left-1/2 -translate-x-1/2"
       />
+
       <img
         src="/lamp.png"
         alt="lamp"
