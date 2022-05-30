@@ -4,7 +4,7 @@ const Paper: FC<{
   title: string
   value?: number | string
   img: string
-  className: string
+  className?: string
 }> = ({ title, value, img, className = '' }) => {
   return (
     <div className={`relative inline-block ${className}`}>
