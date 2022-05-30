@@ -6,20 +6,19 @@ import { DeviceState } from './../types/device-state'
  * @returns The device state
  */
 export const getDeviceState = async (): Promise<DeviceState> => {
-  const {
-    data: { data },
-  } = await axios.get<{
-    data: DeviceState
-  }>('https://api.netpie.io/v2/device/shadow/data', {
-    headers: {
-      Authorization: `Device ${process.env.NEXT_PUBLIC_deviceId}`,
-    },
-  })
-  // console.log(data)
-  return data
-  // return {
-  //   LDR: Math.round(Math.random() * 100),
-  //   LightStatus: 1,
-  //   Motion: 1,
-  // }
+  // const {
+  //   data: { data },
+  // } = await axios.get<{
+  //   data: DeviceState
+  // }>('https://api.netpie.io/v2/device/shadow/data', {
+  //   headers: {
+  //     Authorization: `Device ${process.env.NEXT_PUBLIC_deviceId}`,
+  //   },
+  // })
+  // return data
+  return {
+    LDR: Math.round(Math.random() * 2400),
+    LightStatus: 1,
+    Motion: 1,
+  }
 }
