@@ -34,7 +34,7 @@ export default function Home() {
         className="bg-black w-full h-full absolute transition-opacity"
         style={{
           opacity: bgOpacity,
-          translationDuration: `${updateInterval * 0.5}ms`,
+          transitionDuration: `${updateInterval * 0.5}ms`,
         }}
       ></div>
 
