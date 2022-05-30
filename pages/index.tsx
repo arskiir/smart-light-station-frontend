@@ -5,7 +5,7 @@ import { getBgOpacity } from '../utils/getBgOpacity'
 import { getStatusText } from '../utils/getStatusText'
 
 export default function Home() {
-  const updateInterval = 1500
+  const updateInterval = 750
 
   const state = useDeviceState({ updateInterval })
   const [bgOpacity, setBgOpacity] = useState(getBgOpacity(state.LDR))
