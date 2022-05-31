@@ -7,13 +7,14 @@ import { getStatusText } from '../utils/getStatusText'
 
 export default function Home() {
   const updateInterval = 750
+  const maxLdr = 2000
 
   const state = useDeviceState({ updateInterval })
-  const [bgOpacity, setBgOpacity] = useState(getBgOpacity(state.LDR))
+  const [bgOpacity, setBgOpacity] = useState(getBgOpacity(state.LDR, maxLdr))
   const [statusText, setStatusText] = useState(getStatusText(state))
 
   useEffect(() => {
-    setBgOpacity(getBgOpacity(state.LDR))
+    setBgOpacity(getBgOpacity(state.LDR, maxLdr))
     setStatusText(getStatusText(state))
   }, [state])
 
